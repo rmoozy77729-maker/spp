@@ -75,6 +75,17 @@ Defines each SPP term: quarters, budget, and the governance proposals that creat
 | `budgetProposal` | Yes | Snapshot vote that defined the budget |
 | `selectionProposal` | Yes | Snapshot vote that selected providers |
 
+### Reporting cadence
+
+A program's `year1Quarters` is the canonical list of reporting periods. Providers must publish one report per listed quarter, and report keys in `providers.json` must use these exact strings.
+
+Streams rarely commence on a quarter boundary, so the first listed quarter is always the first **full** calendar quarter after `startDate`:
+
+- **SPP1** started 2024-02-01 → first report quarter is `2024/Q2`.
+- **SPP2** started 2025-05-26 → first report quarter is `2025/Q3`.
+
+Any work done before that first quarter (the partial-period stub between `startDate` and the start of the first full quarter) is rolled into the first report; it should not be tracked as a separate report entry.
+
 ### Proposal fields
 
 | Field | Required | Description |
